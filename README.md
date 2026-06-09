@@ -4,14 +4,26 @@
 
 **面向中文学术文档的隐私优先、可扩展质量检查与自动化工具生态**
 
+本仓库是生态入口、跨项目文档和路线图，不包含检查引擎的主实现。核心实现分别位于下列
+三个职责明确的项目中。
+
 这是一组相互协作的开源工具，用于检查中文课程论文、研究报告及其他学术 DOCX 文档。
 文档在本地设备或用户选择的 CI 运行器内处理，不会由这些工具上传到外部检查服务。
+
+## 为什么需要这个项目
+
+多数写作工具关注语言润色；本项目关注可以机械检查、可以进入 CI 的中文学术 DOCX
+质量问题，例如占位符残留、重复标点、中文字符间异常空格、参考文献章节缺失、段落过长
+和机器可读报告。
+
+本项目不判断论证质量、事实准确性、引用真实性，也不声称符合任何学校或期刊的正式格式
+规范。
 
 ## 项目组成
 
 | 项目 | 职责 | 稳定入口 |
 | --- | --- | --- |
-| [han-docx-lint](https://github.com/heavenoracle/han-docx-lint) | 解析 DOCX、执行规则并输出检查结果 | [`v0.2.0`](https://github.com/heavenoracle/han-docx-lint/releases/tag/v0.2.0) |
+| [han-docx-lint](https://github.com/heavenoracle/han-docx-lint) | 解析 DOCX、执行规则并输出检查结果 | [`v0.3.0`](https://github.com/heavenoracle/han-docx-lint/releases/tag/v0.3.0) |
 | [han-docx-rules](https://github.com/heavenoracle/han-docx-rules) | 提供可审计、可复用的 JSON 质量配置 | [`main`](https://github.com/heavenoracle/han-docx-rules/tree/main) |
 | [han-docx-action](https://github.com/heavenoracle/han-docx-action) | 在 GitHub Actions 中批量检查 DOCX 并上传报告 | [`v1`](https://github.com/heavenoracle/han-docx-action/releases/tag/v1) |
 
